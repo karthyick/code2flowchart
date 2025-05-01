@@ -1,0 +1,62 @@
+{
+  "name": "code-to-flowchart",
+  "displayName": "Code to Flowchart",
+  "description": "Generate mermaid flowcharts from your code",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Visualization"
+  ],
+  "publisher": "krextensions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karthyick/code2flowchart.git"
+  },
+  "activationEvents": [
+    "onCommand:code-to-flowchart.generateFlowchart"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "code-to-flowchart.generateFlowchart",
+        "title": "Generate Flowchart from Code"
+      }
+    ],
+    "configuration": {
+      "title": "Code to Flowchart",
+      "properties": {
+        "codeToFlowchart.detailLevel": {
+          "type": "string",
+          "default": "medium",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "description": "Level of detail in the generated flowchart"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "mermaid": "^11.6.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.99.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  }
+}
