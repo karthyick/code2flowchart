@@ -43,7 +43,7 @@ You can adjust the detail level of generated flowcharts in your VS Code settings
 ### Getting the Code
 
 ```bash
-git clone https://github.com/yourusername/code2flowchart.git
+git clone https://github.com/karthyick/code2flowchart.git
 cd code2flowchart
 npm install
 ```
